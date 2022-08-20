@@ -1,0 +1,403 @@
+:root{
+    --white:#ffffff;
+    --grey: #777;
+    --red: #ff0000;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,body {
+    padding: 0;
+    margin: 0;
+    background-color: dimgrey;
+}
+
+h1 {
+    margin: 0;
+}
+
+.div-box {
+    padding-top: 2rem;
+    text-align: center;
+    background-color: var(--white);
+}
+
+/* Start scrollbar progress */
+.progress-bar-template {
+    position: fixed;
+    top: 0;
+    width: 0%;
+    height: 7px;
+    background: linear-gradient(45deg,#f17e7e,#ff0000);
+    z-index: 10;  
+}
+/* End Scrollbar progress */
+
+/* Start hover-effects-template */
+.hover-effects-template {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
+}
+
+.hover-effects-template ul {
+    position: relative;
+    display: flex;
+    gap: 25px;
+}
+
+.hover-effects-template ul li {
+    position: relative;
+    list-style: none;
+    width: 60px;
+    height: 60px;
+    background-color: var(--white);
+    border-radius: 60px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: 0.5s;
+}
+
+.hover-effects-template ul li:hover {
+    width: 180px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
+}
+
+.hover-effects-template ul li::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 60px;
+    background:  linear-gradient(45deg,var(--i),var(--j));
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.hover-effects-template ul li:hover::before {
+    opacity: 1;
+}
+
+.hover-effects-template ul li::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 60px;
+    background: linear-gradient(45deg,var(--i),var(--j));
+    transition: 0.5s;
+    filter: blur(15px);
+    z-index: -1;
+    opacity: 0;
+}
+
+.hover-effects-template ul li:hover::after {
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.hover-effects-template ul li ion-icon{
+    color: var(--grey);
+    vertical-align: middle;
+    font-size: 1.75em;
+    transition: 0.5;
+}
+
+.hover-effects-template ul li:hover ion-icon {
+    transform: scale(0);
+    color: var(--white);
+    transition-delay: 0s;
+}
+
+.hover-effects-template ul li span {
+    position: absolute;
+}
+
+.hover-effects-template ul li .title {
+    color: var(--white);
+    font-size: 1.1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transform: scale(0);
+    transition: 0.5s;
+    transition-delay: 0s;
+}
+
+.hover-effects-template ul li:hover .title {
+    transform: scale(1);
+    transition-delay: 0.25s;
+}
+/* End hover-effects-template */
+
+/* Start Accordion-template */
+.accordion-template {
+    user-select: none;
+    font-family: sans-serif;
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg,#ffffff,#f5f8ff);
+}
+
+.accordion-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 40px;
+    max-width: 600px;
+    gap: 20px;
+}
+
+.accordion-container h1 {
+    color: #333;
+}
+
+.accordion-container .tab {
+    position: relative;
+    background: var(--white);
+    padding:  0 20px 20px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.accordion-container .tab input {
+    appearance: none;
+}
+
+.accordion-container .tab label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.accordion-container .tab label::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    font-size: 2em;
+    color: rgba(0, 0, 0, 0.1);
+    transition: transform 1s;
+}
+
+.accordion-container .tab:hover label::after {
+    color: #333;
+}
+
+.accordion-container .tab input:checked ~ label::after {
+    transform: rotate(135deg);
+    color: var(--white);
+}
+
+.accordion-container .tab label h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background:#333 ;
+    color: var(--white);
+    font-size: 1.25em;
+    border-radius: 5px;
+    margin: 0;
+    margin-right: 10px;
+}
+
+.accordion-container .tab input:checked ~ label h2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 8em;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.accordion-container .tab:nth-child(1) label h2 {
+    background: linear-gradient(135deg,#70f570,#49c628);
+}
+
+.accordion-container .tab:nth-child(2) label h2 {
+    background: linear-gradient(135deg,#3c8ce7,#00eaff);
+}
+
+.accordion-container .tab:nth-child(3) label h2 {
+    background: linear-gradient(135deg,#ff96f9,#c32bac);
+}
+
+.accordion-container .tab:nth-child(4) label h2 {
+    background: linear-gradient(135deg,#fd6e6a,#ffc600);
+}
+
+.accordion-container .tab label h3 {
+    margin: 0;
+    position: relative;
+    font-weight: 500;
+    color: #333;
+    z-index: 10;
+}
+
+.accordion-container .tab input:checked ~ label h3 {
+    background: var(--white);
+    padding:  2px 10px;
+    color: #333;
+    border-radius: 2px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-container .tab .content {
+    max-height: 0;
+    transition: 1s;
+    overflow: hidden;
+}
+
+.accordion-container .tab input:checked ~ .content {
+    max-height: 100vh;
+}
+
+.accordion-container .tab .content  p {
+    position: relative;
+    padding: 10px 0;
+    color: #333;
+    z-index: 10;
+}
+
+.accordion-container .tab input:checked ~ .content p {
+    color: var(--white);
+}
+/* End Accordion-template */
+
+/* Start List Hover Effects */
+.list-hover-template {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2f363e;
+}
+
+.list-hover {
+    position: relative;
+    padding: 1rem 50px;
+    width: 350px;
+    min-height: fit-content;
+    background: #2f363e;
+    border-radius: 20px;
+    box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+    10px 10px 70px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 10px rgba(255, 255, 255, 0.2),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.75)
+}
+
+h4,p {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.list-hover h3 {
+    margin: 0;
+    color: var(--white);
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.list-hover .list {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.list-hover .list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 45px;
+    background: #f6f6f6;
+    border-radius: 22.5px;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.25),
+    inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+}
+
+.list-hover .list:hover::before {
+    width: 100%;
+}
+
+.list-hover .list .rank {
+    position: relative;
+    min-width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.list-hover .list .rank::before {
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background: #2f363e;
+    border-radius: 35px;
+    transform: scale(0);
+    transition: 0.5s;
+}
+
+.list-hover .list:hover .rank::before {
+    transform: scale(1);
+}
+
+.list-hover .list .rank span {
+    position: relative;
+    font-weight: 600;
+    font-size: 1em;
+    color: #000;
+    transition: 0.5s;
+}
+
+.list-hover .list:hover .rank span {
+    color: var(--white);
+}
+
+.list-hover .list .creator {
+    position: relative;
+    line-height: 1.15em;
+}
+
+.list-hover .list .creator h4 {
+    font-weight: 600;
+    color: #bcbcc0;
+    transition: 0.5s;
+}
+
+.list-hover .list .creator p {
+    font-weight: 400;
+    color: #95999d;
+    font-size: 0.85em;
+    transition: 0.5s;
+}
+
+.list-hover .list:hover .creator h4,
+.list-hover .list:hover .creator p {
+    color: #000;
+}
+
+/* End List Hover Effects */
