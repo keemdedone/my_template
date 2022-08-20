@@ -22,6 +22,7 @@ h1 {
 }
 
 .div-box {
+    user-select: none;
     padding-top: 2rem;
     text-align: center;
     background-color: var(--white);
@@ -40,10 +41,10 @@ h1 {
 
 /* Start hover-effects-template */
 .hover-effects-template {
+    padding-bottom: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 30vh;
 }
 
 .hover-effects-template ul {
@@ -141,9 +142,8 @@ h1 {
 
 /* Start Accordion-template */
 .accordion-template {
-    user-select: none;
+    padding-bottom: 3rem;
     font-family: sans-serif;
-    padding: 3rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
