@@ -35,8 +35,8 @@ h1 {
     top: 0;
     width: 0%;
     height: 7px;
-    background: linear-gradient(45deg, #f17e7e, #ff0000);
-    z-index: 10;
+    background: #70f570;
+    z-index: 4;
 }
 
 /* End Scrollbar progress */
@@ -536,7 +536,7 @@ p {
     width: 60px;
     height: 60px;
     background: #212532;
-    z-index: 10000;
+    z-index: 3;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
@@ -544,7 +544,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 1s;
+    transition: transform 1.5s;
 }
 
 .navigation-circle.active .toggle-circle {
@@ -736,18 +736,21 @@ p {
 
 .sidebar-body .sidebar-toggle {
     position: absolute;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
     top: 0;
     left: 0;
     width: 100%;
     height: 60px;
-    border-bottom: 5px solid var(--dimgrey);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
     padding: 0 30px;
+    background: #3c8ce7;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .sidebar-body .sidebar-toggle ion-icon {
+    color: #fff;
     scale: 3;
     transition: 0.5s;
 }
@@ -841,13 +844,13 @@ p {
 
 .sidebar-body ul li a .text {
     position: relative;
-    padding: 0 15px;
-    height: 60px;
     display: flex;
     align-items: center;
-    color: #333;
     opacity: 0;
     visibility: hidden;
+    padding: 0 15px;
+    height: 60px;
+    color: #333;
     transition: 0.5s;
 }
 
