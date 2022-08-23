@@ -409,16 +409,17 @@ p {
 }
 /* End List Hover Effects */
 
-/* Start nav bar-1 */
+/* Start 9 dots menu */
 .dots-template {
-    padding: 5rem 0;
+    padding: 2rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #10131c;
+    background: #2f363e;
 }
 
 .navigation {
+    margin: 0 7rem;
     position: relative;
     width: 70px;
     height: 70px;
@@ -476,4 +477,386 @@ p {
             drop-shadow(0 0 5px #70f570)
             drop-shadow(0 0 15px #70f570);
 }
-/* End nav bar-1 */
+/* End 9 dots menu */
+
+/* Start Circle menu */
+.navigation-circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation-circle li {
+    position: absolute;
+    list-style: none;
+    left: 0;
+    transform-origin: 100px;
+    transition: 0.5s;
+    transition-delay: calc(0.1s*var(--c));
+    transform: rotate(0deg) translateX(80px);
+
+}
+
+.navigation-circle.active li {
+    transform: rotate(calc(360deg/8*var(--c)));
+}
+
+.navigation-circle li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: #212532;
+    border-radius: 50%;
+    transform: rotate(calc(360deg/-8*var(--c)));
+    box-shadow: 0 3px 4px rgba(0,0,0,0.15);
+    color: #fff;
+    scale: 1.1;
+    transition: 0.5s;
+}
+
+.navigation-circle.active li a ion-icon {
+    transition: 0.5s;
+}
+
+.navigation-circle li a:hover ion-icon {
+    color: #70f570;
+    filter: drop-shadow(0 0 2px #70f570)
+            drop-shadow(0 0 5px #70f570)
+            drop-shadow(0 0 15px #70f570);
+}
+
+.toggle-circle {
+    color: #fff;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #212532;
+    z-index: 10000;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s;
+}
+
+.navigation-circle.active .toggle-circle {
+    transform: rotate(315deg);
+}
+
+.navigation-circle li ion-icon {
+    font-size: 1.5em;
+    color: #fff;
+}
+/* End Circle menu */
+
+/* Start Dropdown User Menu */
+.drop-down-template{
+    background: #2f363e;
+}
+
+.drop-nav {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 120px;
+    height: 60px;
+    background: #2f363e;
+    border-radius: 5px;
+    box-shadow:  0 25px 35px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    transition: height 0.5s, width 0.5s;
+    transition-delay: 0s, 0.5s;
+    overflow: hidden;
+}
+
+.drop-nav.active {
+    width: 300px;
+    height: 400px;
+    transition: width 0.5s, height 0.5s;
+    transition-delay: 0s, 0.5s;
+}
+
+.drop-nav .userBx {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+
+.drop-nav.active .userBx {
+    width: calc(100% - 60px);
+    transition-delay: 0s;
+}
+
+.drop-nav .userBx .username {
+    white-space: nowrap;
+    color:#fff;
+    font-size: 18px;
+    margin-left: 0.5rem;
+}
+
+.drop-nav .userBx .imgBx{
+    position: relative;
+    min-width: 60px;
+    height: 60px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 50%;
+    border: 10px solid #2f363e;
+}
+
+.drop-nav .userBx .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.drop-nav .toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.drop-nav .toggle::before {
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    transform: translateY(-10px);
+    box-shadow: 0 10px #fff;
+    transition: 0.5s;
+}
+
+.drop-nav .toggle::after {
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    transform: translateY(10px);
+    transition: 0.5s;
+}
+
+.drop-nav.active .toggle::before {
+    transform: translateY(0px) rotate(0deg);
+    box-shadow: 0 0 #fff;
+}
+
+.drop-nav.active .toggle::after {
+    transform: translateY(0px) rotate(0deg);    
+}
+
+.menu {
+    text-align: left;
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 60px);
+    margin-top: 60px;
+    padding: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menu li a {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    font-size: 1.25em;
+    font-weight: 700;
+    transition: 0.25s;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    margin-left: 2rem;
+    color: #3c8ce7;
+    filter: drop-shadow(0 0 2px #3c8ce7)
+            drop-shadow(0 0 5px #3c8ce7)
+            drop-shadow(0 0 10px #3c8ce7);
+}
+
+.menu li a span {
+    letter-spacing: 2px;
+}
+
+.menu li a ion-icon {
+    font-size: 1.5em;
+    margin: 0 0.5rem;
+}
+/* End Dropdown User Menu */
+
+/* Start Sidebar */
+.sidebar-template {
+    background: #3d4152;
+    padding: 5rem 0;
+}
+
+.sidebar-body {
+    position: relative;
+    background-color: #fff;
+    width: 75px;
+    height: 700px;
+    inset: 20px 0 20px 20px;
+    transition: 0.5s;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-body.open {
+    width: 250px;
+}
+
+.sidebar-body .sidebar-toggle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    border-bottom: 5px solid var(--dimgrey);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.sidebar-body .sidebar-toggle ion-icon {
+    scale: 3;
+    transition: 0.5s;
+}
+
+.sidebar-body.open .sidebar-toggle ion-icon {
+    transform: rotate(-90deg);
+}
+
+.sidebar-body ul {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    gap: 15px;
+    width: 100%;
+}
+
+.sidebar-body ul li {
+    list-style: none;
+    position: relative;
+    width: 100%;
+    height: 60px;
+    padding: 0 10px;
+    transition: 0.5s;
+}
+
+.sidebar-body ul li.active {
+    transform: translateX(30px);
+}
+
+.sidebar-body.open ul li.active {
+    transform: translateX(10px);
+}
+
+.sidebar-body ul li.active:hover {
+    transform: translateX(30px);
+}
+
+.sidebar-body.open ul li.active:hover {
+    transform: translateX(10px);
+}
+
+.sidebar-body ul li:hover,
+.sidebar-body.open ul li:hover {
+    transform: translateX(10px);
+}
+
+.sidebar-body ul li a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    text-decoration: none;
+}
+
+.sidebar-body ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 55px;
+    height: 55px;
+    line-height: 65px;
+    transition: 0.5s;
+    color: #222;
+    border-radius: 10px;
+    font-size: 2rem;
+}
+
+.sidebar-body ul li.active a .icon {
+    color: #fff;
+    background: var(--clr);
+}
+
+.sidebar-body ul li a .icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--clr);
+    filter: blur(8px);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.sidebar-body ul li.active a .icon::before {
+    opacity: 0.5;
+}
+
+.sidebar-body ul li a .text {
+    position: relative;
+    padding: 0 15px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    color: #333;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+
+.sidebar-body.open ul li a .text{
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar-body ul li.active a .text {
+    color: var(--clr);
+}
+/* End Sidebar */

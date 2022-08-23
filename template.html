@@ -21,6 +21,7 @@
       <div class="progress-bar-template" id="scroll-progress"></div>
 
       <!-- ============================================================================== CONTENT ============================================================================== -->
+
       <!-- Hover Effects -->
       <h1>Hover Text And Gradient Drop Shadow</h1>
       <div class="hover-effects-template">
@@ -160,9 +161,9 @@
         </div>
       </div>
 
-      <!-- Dots Menu -->
-      <h1>CSS 9 Dots Menu</h1>
+      <h1>9 Dots Menu And Circle menu</h1>
       <div class="dots-template">
+        <!-- Dots Menu -->
         <div class="navigation">
           <span style="--i: 0; --x: -1; --y: 0">
             <ion-icon name="accessibility-outline"></ion-icon>
@@ -192,17 +193,183 @@
             <ion-icon name="logo-windows"></ion-icon>
           </span>
         </div>
+
+        <!-- circle menu -->
+        <div class="navigation-circle">
+          <div class="toggle-circle">
+            <ion-icon name="add-outline"></ion-icon>
+          </div>
+          <li style="--c: 0">
+            <a href="#"><ion-icon name="accessibility-outline"></ion-icon></a>
+          </li>
+          <li style="--c: 1">
+            <a href="#"><ion-icon name="bicycle-outline"></ion-icon></a>
+          </li>
+          <li style="--c: 2">
+            <a href="#"><ion-icon name="cafe-outline"></ion-icon></a>
+          </li>
+          <li style="--c: 3">
+            <a href="#"><ion-icon name="chatbox-outline"></ion-icon></a>
+          </li>
+          <li style="--c: 4">
+            <a href="#"> <ion-icon name="heart-half-outline"></ion-icon></a>
+          </li>
+          <li style="--c: 5">
+            <a href="#"><ion-icon name="radio-outline"></ion-icon></a>
+          </li>
+          <li style="--c: 6">
+            <a href="#"><ion-icon name="telescope-outline"></ion-icon></a>
+          </li>
+          <li style="--c: 7">
+            <a href="#"><ion-icon name="wifi-outline"></ion-icon></a>
+          </li>
+        </div>
+      </div>
+
+      <!-- Sidebar menu -->
+      <h1>Sidebar</h1>
+      <div class="sidebar-template">
+        <div class="sidebar-body">
+          <div class="sidebar-toggle">
+            <ion-icon name="chevron-down-outline"></ion-icon>
+          </div>
+          <ul>
+            <li class="sidebar-list" style="--clr: #f44336">
+              <a>
+                <span class="icon">
+                  <ion-icon name="home-outline"></ion-icon>
+                </span>
+                <span class="text">Home</span>
+              </a>
+            </li>
+            <li class="sidebar-list" style="--clr: #ffa117">
+              <a>
+                <span class="icon">
+                  <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+                </span>
+                <span class="text">Comment</span>
+              </a>
+            </li>
+            <li class="sidebar-list" style="--clr: #0fc70f">
+              <a>
+                <span class="icon">
+                  <ion-icon name="analytics-outline"></ion-icon>
+                </span>
+                <span class="text">Static</span>
+              </a>
+            </li>
+            <li class="sidebar-list" style="--clr: #2196f3">
+              <a>
+                <span class="icon">
+                  <ion-icon name="cash-outline"></ion-icon>
+                </span>
+                <span class="text">Payment</span>
+              </a>
+            </li>
+            <li class="sidebar-list" style="--clr: #b145e9">
+              <a>
+                <span class="icon">
+                  <ion-icon name="earth-outline"></ion-icon>
+                </span>
+                <span class="text">Location</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Dropdown User Menu -->
+      <div class="drop-down-template">
+        <div class="drop-nav">
+          <div class="userBx">
+            <div class="imgBx">
+              <img src="img/user-icon.jpg" />
+            </div>
+            <p class="username">Keem, the Junior Dev</p>
+          </div>
+          <div class="toggle"></div>
+          <ul class="menu">
+            <li>
+              <a href="#">
+                <ion-icon name="person-circle-outline"></ion-icon>
+                <span>Profile</span>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                ><ion-icon name="call-outline"></ion-icon>
+                <span>Call</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <ion-icon name="chatbubble-outline"></ion-icon>
+                <span>Messages</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <ion-icon name="notifications-outline"></ion-icon>
+                <span>Notification</span>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                ><ion-icon name="log-out-outline"></ion-icon>
+                <span>Logout</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
     <!-- ============================================================================== SCRIPT ============================================================================== -->
-    <!-- Dots Menu -->
+
+    <!-- Dropdown User Menu -->
     <script>
-      let navigation = document.querySelector(".navigation");
+      const toggle = document.querySelector(".toggle");
+      const drop_nav = document.querySelector(".drop-nav");
+      toggle.onclick = () => {
+        drop_nav.classList.toggle("active");
+      };
+    </script>
+
+    <!-- Sidebar menu -->
+    <script>
+      const toggle_sidebar = document.querySelector(".sidebar-toggle");
+      const sidebar_menu = document.querySelector(".sidebar-body");
+      toggle_sidebar.onclick = () => {
+        sidebar_menu.classList.toggle("open");
+      };
+
+      const sidebar_list = document.querySelectorAll(".sidebar-list");
+      function activeLink() {
+        sidebar_list.forEach((item) => item.classList.remove("active"));
+        this.classList.add("active");
+      }
+      sidebar_list.forEach((item) =>
+        item.addEventListener("click", activeLink)
+      );
+    </script>
+
+    <!-- 9 Dots Menu -->
+    <script>
+      const navigation = document.querySelector(".navigation");
       navigation.onclick = () => {
         navigation.classList.toggle("active");
       };
     </script>
+
+    <!-- circle menu -->
+    <script>
+      const toggle_circle = document.querySelector(".toggle-circle");
+      const menu = document.querySelector(".navigation-circle");
+      toggle_circle.onclick = () => {
+        menu.classList.toggle("active");
+      };
+    </script>
+
     <!-- ionicicons -->
     <script
       type="module"
