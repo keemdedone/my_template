@@ -322,6 +322,12 @@
                 <span>Logout</span>
               </a>
             </li>
+            <div class="going-dark">
+              <label class="switch">
+                <input type="checkbox" class="dark-mode" />
+                <span class="slider round"></span>
+              </label>
+            </div>
           </ul>
         </div>
       </div>
@@ -332,9 +338,13 @@
     <!-- Dropdown User Menu -->
     <script>
       const toggle = document.querySelector(".toggle");
+      const toggle_dark = document.querySelector(".dark-mode");
       const drop_nav = document.querySelector(".drop-nav");
       toggle.onclick = () => {
         drop_nav.classList.toggle("active");
+      };
+      toggle_dark.onclick = () => {
+        drop_nav.classList.toggle("dark");
       };
     </script>
 
