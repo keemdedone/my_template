@@ -1,10 +1,11 @@
 :root {
     --white: #ffffff;
+    --white-1: #f5f8ff;
     --grey: #777;
     --red: #ff0000;
     --dark: #333;
     --black: #000;
-    --dimgrey:dimgrey;
+    --dimgrey:#696969;
 }
 
 * {
@@ -15,7 +16,7 @@ html,
 body {
     padding: 0;
     margin: 0;
-    background-color: dimgrey;
+    background-color: var(--dimgrey);
 }
 
 h1 {
@@ -150,7 +151,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(180deg, #ffffff, #f5f8ff);
+    background: linear-gradient(180deg, var(--white), var(--white-1));
 }
 
 .accordion-container {
@@ -961,3 +962,31 @@ input:checked + .slider:before {
     color: var(--clr);
 }
 /* End Sidebar */
+
+/* Start smile gif */
+.smile-gif-template {
+    /* border: 1px solid red; */
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    right: 0;
+    bottom: 0;
+    height: fit-content;
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0 1rem;
+}
+
+.smile-gif-template .img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    height: 450px;
+    width: 300px;
+    background: url("gif/smile-transpant.gif");
+    background-size: cover;
+}
+/* End smile gif */
