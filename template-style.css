@@ -785,13 +785,13 @@ input:checked + .slider:before {
 
 .sidebar-body {
     position: relative;
+    display: block;
     background-color: #fff;
     width: 75px;
     height: 700px;
     inset: 20px 0 20px 20px;
     transition: 0.5s;
     border-radius: 20px;
-    display: block;
 }
 
 .sidebar-body.open {
