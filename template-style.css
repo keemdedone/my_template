@@ -781,6 +781,12 @@ input:checked + .slider:before {
 .sidebar-template {
     background: #3d4152;
     padding: 5rem 0;
+    display: grid;
+    grid-template-columns: repeat(2,calc( 100% / 2));
+}
+
+.sidebar-body-2 {
+    /* border: 1px solid white; */
 }
 
 .sidebar-body {
@@ -988,3 +994,86 @@ input:checked + .slider:before {
     background-size: cover;
 }
 /* End smile gif */
+
+/* Start resume */
+.resume-container {
+    padding: 2rem;
+    background: #333;
+}
+
+.resume-paper {
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #fff;
+    margin: auto;
+    width: 1240px;
+    height: 1754px;
+    box-shadow:
+    0px 0px 3.2px rgba(255,255,255, 0.036),
+    0px 0px 7.6px rgba(255,255,255, 0.044),
+    0px 0px 14.3px rgba(255,255,255, 0.048),
+    0px 0px 25.5px rgba(255,255,255, 0.051),
+    0px 0px 47.6px rgba(255,255,255, 0.055),
+    0px 0px 114px rgba(255,255,255, 0.07)
+    ;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-areas:
+    "a c"
+    "b c"
+    "b c";
+}
+
+.profile {
+    grid-area: a;
+    text-align: center;
+    color: #fff;
+    background-color: #303f9f;
+    padding: 1rem;
+    line-height: 2.5rem;
+}
+
+.profile img {
+    border-radius: 100%;
+}
+
+.profile .name {
+    font-size: 32px;
+}
+
+.profile .position,
+.profile .contact {
+    padding: 0 2rem;
+}
+
+.profile .position {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 14px;
+}
+
+.profile .contact {
+    margin: 2rem 0;
+}
+
+.profile .contact span {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 14px;
+}
+
+.profile .position .icon {
+    scale: 1.5;
+}
+
+.background {
+    grid-area: b;
+    background-color: #ececec;
+}
+
+.details {
+    grid-area: c;
+}
+/* End resume */
