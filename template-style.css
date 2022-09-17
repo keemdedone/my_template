@@ -1008,20 +1008,19 @@ input:checked + .slider:before {
     margin: auto;
     width: 1240px;
     height: 1754px;
-    box-shadow:
-    0px 0px 3.2px rgba(255,255,255, 0.036),
-    0px 0px 7.6px rgba(255,255,255, 0.044),
-    0px 0px 14.3px rgba(255,255,255, 0.048),
-    0px 0px 25.5px rgba(255,255,255, 0.051),
-    0px 0px 47.6px rgba(255,255,255, 0.055),
-    0px 0px 114px rgba(255,255,255, 0.07)
-    ;
     display: grid;
     grid-template-columns: 30% 70%;
     grid-template-areas:
     "a c"
     "b c"
     "b c";
+    box-shadow:
+    0px 0px 3.2px rgba(255,255,255, 0.036),
+    0px 0px 7.6px rgba(255,255,255, 0.044),
+    0px 0px 14.3px rgba(255,255,255, 0.048),
+    0px 0px 25.5px rgba(255,255,255, 0.051),
+    0px 0px 47.6px rgba(255,255,255, 0.055),
+    0px 0px 114px rgba(255,255,255, 0.07);
 }
 
 .profile {
