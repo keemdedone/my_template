@@ -338,35 +338,35 @@
         <div class="img"></div>
       </div>
 
-      <!-- Resume -->
-      <h1>Resume</h1>
-      <div class="resume-container">
-        <div class="resume-paper">
-          <div class="profile">
-            <img src="img/user-icon.jpg" width="96" />
-            <div class="name">Komchan Thongsen</div>
-            <div class="position">
-              <ion-icon class="icon" name="aperture-outline"></ion-icon>
-              Web Developer
-            </div>
-            <div class="contact">
-              <span>
-                <ion-icon class="icon" name="logo-facebook"></ion-icon>
-                คีม จองอึน
-              </span>
-              <span>
-                <ion-icon class="icon" name="logo-google"></ion-icon>
-                Komchan447@gmail.com
-              </span>
-              <span>
-                <ion-icon class="icon" name="call-outline"></ion-icon>
-                098-087-7274
-              </span>
-            </div>
-          </div>
-          <div class="background"></div>
-          <div class="details"></div>
+      <!-- Drop down ease-in-out menu -->
+      <div class="menu-animate">
+        <div class="ease-toggle">
+          <span></span>
         </div>
+        <ul>
+          <li style="--i: 0">
+            <a href="#"><ion-icon name="home-outline"></ion-icon>Home</a>
+          </li>
+          <li style="--i: 1">
+            <a href="#"
+              ><ion-icon name="help-circle-outline"></ion-icon>About</a
+            >
+          </li>
+          <li style="--i: 2">
+            <a href="#"><ion-icon name="server-outline"></ion-icon>Services</a>
+          </li>
+          <li style="--i: 3">
+            <a href="#"><ion-icon name="cube-outline"></ion-icon>Work</a>
+          </li>
+          <li style="--i: 4">
+            <a href="#"
+              ><ion-icon name="people-circle-outline"></ion-icon>Team</a
+            >
+          </li>
+          <li style="--i: 5">
+            <a href="#"><ion-icon name="log-out-outline"></ion-icon>Exit</a>
+          </li>
+        </ul>
       </div>
     </div>
 
@@ -441,6 +441,16 @@
           document.body.scrollTop || document.documentElement.scrollTop;
         scrollProgress.style.width = `${(scrollTop / height) * 100}%`;
       });
+    </script>
+
+    <!-- ease-in-out menu -->
+    <script>
+      const menu_animate = document.querySelector(".menu-animate");
+      const menu_animate_toogle = document.querySelector(".ease-toggle");
+      menu_animate_toogle.onclick = function () {
+        this.classList.toggle("active");
+        menu_animate.classList.toggle("active");
+      };
     </script>
   </body>
 </html>
