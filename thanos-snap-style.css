@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #242424;
+  }
+
+  .snap-ligth {
+    z-index: 10;
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    animation: deleted 0.5s forwards;
+  }
+
+  @keyframes deleted {
+    0%,100%
+    {
+      opacity: 0;
+    }
+
+    50%{
+      opacity: 1;
+    }
+  }
+  
+  svg {
+    width: 400px;
+    height: 400px;
+    animation: svgDisplay 1s ease-in;
+  }
+
+  @keyframes svgDisplay {
+    from {
+      opacity: 0;
+    } to {
+      opacity: 1;
+    }
+  }
+  
+  img,
+  .content,
+  svg {
+    max-width: 400px;
+    max-height: 400px;
+  }
+  
+  .dust {
+    position: absolute;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  .glow-div {
+    top: 50;
+    left: 50;
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+  }
+  
+  .time-div {
+    top: 50;
+    left: 50;
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+  }
+  
+  .infinity,
+  .gauntlet {
+    cursor: pointer;
+    position: absolute;
+    left: -12px;
+    height: 80px;
+    width: 80px;
+    user-select: none;
+    -moz-user-select: none;
+  }
+  
+  .gauntlet {
+    cursor: pointer;
+    position: absolute;
+    left: -12px;
+    height: 80px;
+    width: 80px;
+    user-select: none;
+    -moz-user-select: none;
+  }
+  
+  .snap {
+    position: absolute;
+    top: 0;
+    left: -12px;
+    height: 80px;
+    width: 80px;
+    background-image: url("https://www.google.com/logos/fnbx/thanos/thanos_snap.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    animation: snaps 2s steps(47);
+  }
+  
+  @keyframes snaps {
+    from {
+      background-position: left;
+    }
+    to {
+      background-position: right;
+    }
+  }
+  
+  .time {
+    position: absolute;
+    top: 0;
+    left: -12px;
+    height: 80px;
+    width: 80px;
+    background-image: url("https://www.google.com/logos/fnbx/thanos/thanos_time.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    animation: effect 2s steps(47);
+  }
+  
+  @keyframes effect {
+    from {
+      background-position: left;
+    }
+    to {
+      background-position: right;
+    }
+  }
+  
+  .para {
+    position: absolute;
+    top: 70px;
+    left: 8px;
+    font-family: "Roboto", san-seriff;
+    color: red;
+  }
+  
+  .paraTime {
+    position: absolute;
+    top: 70px;
+    left: 8px;
+    font-family: "Roboto", san-seriff;
+    color: green;
+  }
