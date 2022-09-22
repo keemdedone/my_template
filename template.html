@@ -279,7 +279,71 @@
             </li>
           </ul>
         </div>
-        <div class="sidebar-body-2"></div>
+        <div class="sidebar-dashboard">
+          <ul>
+            <li>
+              <a href="#"
+                ><span class="icon"
+                  ><ion-icon name="logo-angular"></ion-icon></span
+                ><span class="title">Brand name</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><span class="icon"
+                  ><ion-icon name="home-outline"></ion-icon></span
+                ><span class="title">Dashboard</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><span class="icon"
+                  ><ion-icon name="person-outline"></ion-icon></span
+                ><span class="title">Customers</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><span class="icon"
+                  ><ion-icon
+                    name="chatbubble-ellipses-outline"
+                  ></ion-icon></span
+                ><span class="title">Messages</span></a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon"
+                  ><ion-icon name="help-circle-outline"></ion-icon
+                ></span>
+                <span class="title">Help</span>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                ><span class="icon"
+                  ><ion-icon name="settings-outline"></ion-icon
+                ></span>
+                <span class="title">Setting</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><span class="icon"
+                  ><ion-icon name="lock-closed-outline"></ion-icon></span
+                ><span class="title">Password</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><span class="icon"
+                  ><ion-icon name="log-out-outline"></ion-icon></span
+                ><span class="title">Sing Out</span></a
+              >
+            </li>
+          </ul>
+          <div class="dashboard-toggle"></div>
+        </div>
       </div>
 
       <!-- Dropdown User Menu -->
@@ -334,7 +398,7 @@
       </div>
 
       <!-- Slime gif -->
-      <div class="smile-gif-template">
+      <div class="smile-gif-template" style="z-index: 0">
         <div class="img"></div>
       </div>
 
@@ -371,6 +435,16 @@
     </div>
 
     <!-- ==============================================================================/ SCRIPT /============================================================================== -->
+
+    <!-- Ionicicons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
 
     <!-- Dropdown User Menu -->
     <script>
@@ -420,16 +494,6 @@
       };
     </script>
 
-    <!-- Ionicicons -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
-
     <!-- Scroll bar script -->
     <script>
       const scrollProgress = document.getElementById("scroll-progress");
@@ -450,6 +514,15 @@
       menu_animate_toogle.onclick = function () {
         this.classList.toggle("active");
         menu_animate.classList.toggle("active");
+      };
+    </script>
+
+    <!-- Sidebar Dashboard menu -->
+    <script>
+      const Dashboard_navigation = document.querySelector(".sidebar-dashboard");
+      const Dashboard_toggle = document.querySelector(".dashboard-toggle");
+      Dashboard_toggle.onclick = function () {
+        Dashboard_navigation.classList.toggle("active");
       };
     </script>
   </body>
