@@ -68,6 +68,7 @@ body {
   svg {
     max-width: 400px;
     max-height: 400px;
+    cursor: pointer;
   }
 
   .content {
@@ -102,8 +103,6 @@ body {
     border-radius: 50%;
   }
 
-  /* .infinity,
-  .gauntlet, */
   .snap,
   .time {
     transform: rotate(-30deg);
