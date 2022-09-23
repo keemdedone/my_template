@@ -443,6 +443,22 @@
           <p class="title">Angular</p>
         </div>
       </div>
+
+      <!-- Auto typing -->
+      <h1>Auto typing</h1>
+      <div class="auto-type">
+        <h1>Web-developer <span class="auto-text"></span></h1>
+      </div>
+
+      <!-- Text hover -->
+      <h1>Text-hover</h1>
+      <div class="text-hover">
+        <ul>
+          <li style="--clr: #00dc82">
+            <a href="#" data-text="&nbsp;Angular&nbsp;">&nbsp;Angular&nbsp;</a>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <!-- ==============================================================================/ SCRIPT /============================================================================== -->
@@ -535,6 +551,17 @@
       Dashboard_toggle.onclick = function () {
         Dashboard_navigation.classList.toggle("active");
       };
+    </script>
+
+    <!-- Auto typing -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+      const typed = new Typed(".auto-text", {
+        strings: ["Coding", "Sleeping", "Eating"],
+        typeSpeed: 150,
+        backSpeed: 150,
+        loop: true,
+      });
     </script>
   </body>
 </html>
