@@ -785,7 +785,7 @@ input:checked + .slider:before {
     background: #3d4152;
     padding: 5rem 0;
     display: grid;
-    grid-template-columns: repeat(2,calc( 100% / 2));
+    grid-template-columns: repeat(4,calc( 100% / 4));
 }
 
 .sidebar-body {
@@ -794,7 +794,7 @@ input:checked + .slider:before {
     background-color: #fff;
     width: 75px;
     height: 700px;
-    inset: 20px 0 20px 20px;
+    inset: 0 20px;
     transition: 0.5s;
     border-radius: 50px;
 }
@@ -1329,7 +1329,7 @@ input:checked + .slider:before {
 }
 /* End Clip-path */
 
-/* start Auto typing */
+/* Start Auto typing */
 .auto-type {
     padding: 10rem 0;
     background: #2b323c;
@@ -1345,7 +1345,7 @@ input:checked + .slider:before {
     color: #2196F3;
     -webkit-text-stroke: none;
 }
-/* end Auto typing */
+/* End Auto typing */
 
 /* Start text hover */
 .text-hover {
@@ -1368,7 +1368,7 @@ input:checked + .slider:before {
 
 .text-hover ul li a {
     position: relative;
-    font-size: 6em;
+    font-size: 8em;
     text-decoration: none;
     line-height: 1em;
     letter-spacing: 2px;
@@ -1386,7 +1386,6 @@ input:checked + .slider:before {
     transition: .8s;
     border-right: 8px solid var(--clr);
     -webkit-text-stroke: 1px var(--clr);
-
 }
 
 .text-hover ul li a:hover::before {
