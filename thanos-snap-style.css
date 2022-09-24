@@ -18,6 +18,10 @@ body {
     animation: deleted 1s forwards;
   }
 
+  .selected {
+    border: 1px solid #fff;
+  }
+
   .footer {
     position: absolute;
     display: flex;

@@ -280,7 +280,7 @@
           </ul>
         </div>
 
-        <!-- Dashboard -->
+        <!-- Dashboard sidebar -->
         <div class="sidebar-dashboard">
           <ul>
             <li>
@@ -355,7 +355,7 @@
             <div class="imgBx">
               <img src="img/user-icon.jpg" />
             </div>
-            <p class="username">Keem, the Junior Dev</p>
+            <p class="username">Keem, Junior Dev</p>
           </div>
           <div class="toggle"></div>
           <ul class="menu">
@@ -400,9 +400,9 @@
       </div>
 
       <!-- Slime gif -->
-      <div class="smile-gif-template" style="z-index: 0">
+      <!-- <div class="smile-gif-template" style="z-index: 0">
         <div class="img"></div>
-      </div>
+      </div> -->
 
       <!-- Drop down ease-in-out menu -->
       <div class="menu-animate">
@@ -455,13 +455,15 @@
       <div class="text-hover">
         <ul>
           <li style="--clr: #00dc82">
-            <a href="#" data-text="&nbsp;menu&nbsp;">&nbsp;menu&nbsp;</a>
+            <a href="#" data-text="&nbsp;menu&nbsp;"
+              >&nbsp;<span>menu</span>&nbsp;</a
+            >
           </li>
         </ul>
       </div>
 
-      <!-- Glowing Media Icon -->
-      <h1>Glowing Media Icon</h1>
+      <!-- Icon Hover -->
+      <h1>Icon Hover</h1>
       <div class="media-icon">
         <ul>
           <li style="--mClr: #107c10">
@@ -483,6 +485,45 @@
             <a href="#">
               <ion-icon class="icon" name="logo-javascript"></ion-icon>
             </a>
+          </li>
+          <li style="--mClr: #f44336">
+            <a href="#">
+              <ion-icon class="icon" name="logo-angular"></ion-icon>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="slide-icon">
+        <ul>
+          <li style="--sClr: #107c10">
+            <a href="#"
+              ><ion-icon class="icon" name="reader"></ion-icon
+              ><ion-icon class="icon" name="reader"></ion-icon
+            ></a>
+          </li>
+          <li style="--sClr: #4267b2">
+            <a href="#"
+              ><ion-icon class="icon" name="alarm"></ion-icon
+              ><ion-icon class="icon" name="alarm"></ion-icon
+            ></a>
+          </li>
+          <li style="--sClr: #0078d7">
+            <a href="#"
+              ><ion-icon class="icon" name="balloon"></ion-icon
+              ><ion-icon class="icon" name="balloon"></ion-icon
+            ></a>
+          </li>
+          <li style="--sClr: #f0db4f">
+            <a href="#"
+              ><ion-icon class="icon" name="chatbubble"></ion-icon
+              ><ion-icon class="icon" name="chatbubble"></ion-icon
+            ></a>
+          </li>
+          <li style="--sClr: #f44336">
+            <a href="#"
+              ><ion-icon class="icon" name="heart"></ion-icon
+              ><ion-icon class="icon" name="heart"></ion-icon
+            ></a>
           </li>
         </ul>
       </div>
@@ -529,6 +570,22 @@
       sidebar_list.forEach((item) =>
         item.addEventListener("click", activeLink)
       );
+
+      const game_toggle = document.querySelector(".game-toggle");
+      const game_menu = document.querySelector(".game-menu");
+      const open_icon = document.querySelector(".open-icon");
+      const close_icon = document.querySelector(".close-icon");
+
+      game_toggle.onclick = () => {
+        game_menu.classList.toggle("open");
+        if (game_menu.classList.contains("open")) {
+          close_icon.style.display = "flex";
+          open_icon.style.display = "none";
+        } else {
+          close_icon.style.display = "none";
+          open_icon.style.display = "flex";
+        }
+      };
     </script>
 
     <!-- 9 Dots Menu -->
