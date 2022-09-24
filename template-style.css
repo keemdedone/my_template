@@ -1489,7 +1489,7 @@ input:checked + .slider:before {
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 3rem;
+    column-gap: 6rem;
 }
 
 .slide-icon ul li {
@@ -1533,16 +1533,103 @@ input:checked + .slider:before {
 }
 
 .slide-icon ul li:hover a .icon:nth-child(1) {
-    margin-right: -175%;
+    margin-right: -200%;
 }
 
 .slide-icon ul li a .icon:nth-child(2) {
     color: var(--white);
-    margin-left: -175%;
+    margin-left: -200%;
     transition: 0.5s;
 }
 
 .slide-icon ul li:hover a .icon:nth-child(2) {
     margin-left: 0;
+
 }
 /* End silde icon hover */
+
+/* Start Image hover */
+.image-hover {
+    padding: 10rem 2rem;
+    background: var(--dark);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.image-hover .image-character {
+    width: 800px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: linear-gradient(#BBD2C5,#536976);
+    border-radius: 10px;
+    padding: 40px;
+}
+
+.image-hover .image-character:hover {
+    cursor: pointer;
+}
+
+.image-hover .image-character img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 480px;
+    width: 400px;
+    transition: 0.5s;
+}
+
+.image-hover .image-character:hover:nth-child(odd) img {
+    left: 25%;
+    height: 530px;
+}
+
+.image-hover .image-character:hover:nth-child(even) img {
+    left: 75%;
+    height: 500px;
+}
+
+.image-hover .image-character .image-box {
+    display: none;
+    padding: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: start;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.image-hover .image-character:hover .image-box {
+    display: flex;
+    opacity: 1;
+}
+
+.image-hover .image-character .image-box .title {
+    padding: 0;
+    margin: 0;
+}
+
+.image-hover .image-character:nth-child(odd) .image-box {
+    margin-left: 0;
+}
+
+.image-hover .image-character:nth-child(even) .image-box {
+    margin-left: 100%;
+}
+
+.image-hover .image-character:hover:nth-child(odd) .image-box {
+    margin-left: 50%;
+}
+
+.image-hover .image-character:hover:nth-child(even) .image-box {
+    margin-left: 0;
+}
+/* End Image hover */
