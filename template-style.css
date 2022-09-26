@@ -22,6 +22,10 @@ body {
     background-color: var(--dimgrey);
 }
 
+iframe {
+    display: none;
+}
+
 h1 {
     margin: 0;
 }
@@ -1561,13 +1565,13 @@ input:checked + .slider:before {
 .image-hover .image-character {
     width: 800px;
     height: 400px;
+    padding: 40px;
+    border-radius: 10px;
     position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     background: linear-gradient(#BBD2C5,#536976);
-    border-radius: 10px;
-    padding: 40px;
 }
 
 .image-hover .image-character:hover {
@@ -1582,47 +1586,56 @@ input:checked + .slider:before {
     height: 480px;
     width: 400px;
     transition: 0.5s;
+    transition-delay: 0.25s;
 }
 
 .image-hover .image-character:hover:nth-child(odd) img {
+    transition-delay: 0s;
     left: 25%;
-    height: 530px;
 }
 
 .image-hover .image-character:hover:nth-child(even) img {
+    transition-delay: 0s;
     left: 75%;
-    height: 500px;
 }
 
 .image-hover .image-character .image-box {
-    display: none;
     padding: 10px;
     width: 50%;
+    visibility: hidden;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     text-align: start;
     transition: 0.5s;
+    transition-delay: 0.25s;
     opacity: 0;
 }
 
 .image-hover .image-character:hover .image-box {
-    display: flex;
+    visibility: visible;
     opacity: 1;
+    transition-delay: 0s;
 }
 
 .image-hover .image-character .image-box .title {
-    padding: 0;
     margin: 0;
+    margin-bottom: 15px;
+    padding: 0 10px;
+    font-size: 32px;
+    color: #FFF;
+    background-color: var(--cClr);
+    filter: drop-shadow(0 0 5px var(--cClr));
+    border-radius: 10px;
 }
 
 .image-hover .image-character:nth-child(odd) .image-box {
-    margin-left: 0;
+    margin-left: 0%;
 }
 
 .image-hover .image-character:nth-child(even) .image-box {
-    margin-left: 100%;
+    margin-left: 50%;
 }
 
 .image-hover .image-character:hover:nth-child(odd) .image-box {
@@ -1630,6 +1643,6 @@ input:checked + .slider:before {
 }
 
 .image-hover .image-character:hover:nth-child(even) .image-box {
-    margin-left: 0;
+    margin-left: 0%;
 }
 /* End Image hover */
