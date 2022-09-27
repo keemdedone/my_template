@@ -1459,8 +1459,8 @@ input:checked + .slider:before {
     }
 
     100% {
-        top: 0;
-        left: 0;
+        top: 0px;
+        left: 0px;
     }
 }
 /* End text hover */
@@ -1696,6 +1696,11 @@ input:checked + .slider:before {
     background-color: var(--cClr);
     filter: drop-shadow(0 0 5px var(--cClr));
     border-radius: 10px;
+}
+
+.image-hover .image-character .image-box .content {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
 }
 
 .image-hover .image-character:nth-child(odd) .image-box {
