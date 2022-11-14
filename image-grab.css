@@ -1,0 +1,9 @@
+body {
+    color: #fff;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, #005aa7, #63baf5);
+}
