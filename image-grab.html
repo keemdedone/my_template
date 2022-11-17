@@ -6,8 +6,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="image-grab.css" />
     <title>Image grab animation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
-    content
+    <div class="marquee">
+      <ul class="marquee-content">
+        <li class="marquee-content-list">
+          <img src="img/lol_photo/kaisa.jpg" />
+        </li>
+        <li class="marquee-content-list">
+          <img src="img/lol_photo/katarina.jpg" />
+        </li>
+        <li class="marquee-content-list">
+          <img src="img/lol_photo/lillia.jpg" />
+        </li>
+        <li class="marquee-content-list">
+          <img src="img/lol_photo/nasus.jpg" />
+        </li>
+      </ul>
+    </div>
+
+    <div class="btn">
+      <button class="test" id="testBtn">TEST CLICK</button>
+    </div>
   </body>
 </html>
+
+<!-- JS -->
+<script>
+  // Auto slide
+  const root = document.documentElement;
+  const marqueeContent = document.querySelector("ul.marquee-content");
+  const marqueeContentList = document.querySelector("li.marquee-content-list");
+  const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue(
+    "--marqueeImgDisplayed"
+  );
+
+  root.style.setProperty("--allMarqueeImg", marqueeContent.children.length);
+
+  for (let i = 0; i < marqueeElementsDisplayed; i++) {
+    marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+  }
+
+  // Draggable Slides
+  // const marquee = document.querySelector(".marquee");
+  // let isPressedDown = false;
+  // let maxMarqueeContent = false;
+  // let cursorXSpace;
+
+  // marquee.addEventListener("mousedown", (e) => {
+  //   isPressedDown = true;
+  //   cursorXSpace = e.offsetX - marqueeContent.offsetLeft;
+  // });
+
+  // window.addEventListener("mouseup", () => {
+  //   isPressedDown = false;
+  // });
+
+  // marquee.addEventListener("mousemove", (e) => {
+  //   if (!isPressedDown) return;
+  //   e.preventDefault();
+  //   marqueeContent.style.left = `${e.offsetX - cursorXSpace}px`;
+  //   limitMove();
+  // });
+
+  // function limitMove() {
+  //   const marquee_rect = marquee.getBoundingClientRect();
+  //   const marqueeContent_rect = marqueeContent.getBoundingClientRect();
+
+  //   if (marqueeContent_rect.left > marquee_rect.left) {
+  //     marqueeContent.style.left = "0px";
+  //     marqueeContent.style.webkitAnimation = "none";
+  //     setTimeout(() => {
+  //       marqueeContent.style.webkitAnimation = "";
+  //     }, 10);
+  //   } else if (marqueeContent_rect.right < marquee_rect.right) {
+  //     marqueeContent.style.left = `-${
+  //       marqueeContent_rect.width - marquee_rect.width
+  //     }px`;
+  //   }
+  // }
+
+  // const testBtn = document.getElementById("testBtn");
+  // const marquee_rect = marquee.getBoundingClientRect();
+  // const marqueeContent_rect = marqueeContent.getBoundingClientRect();
+  // testBtn.addEventListener("click", () => {
+  //   console.log("log");
+  //   marqueeContent.style.animationPlayState = "paused";
+  // });
+</script>
