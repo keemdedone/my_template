@@ -13,11 +13,12 @@
     --slideTranslateXAfter: calc((-1 * var(--marqueeImgSize) * var(--allMarqueeImg)));
     --marqueeBoxWidth: 90vw;
     --marqueeBoxHeight: 50vh;
-    --marqueeImgDisplayed: 3;
+    --marqueeImgDisplayed: 2.5;
     --marqueeImgSize: calc(var(--marqueeBoxWidth) / var(--marqueeImgDisplayed));
 }
 
 body {
+    user-select: none;
     color: #fff;
     width: 100vw;
     height: 100vh;
