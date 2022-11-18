@@ -45,7 +45,6 @@
   root.style.setProperty("--allMarqueeImg", marqueeContent.children.length);
 
   for (let i = 0; i < marqueeElementsDisplayed; i++) {
-    console.log(i);
     marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
   }
 
@@ -62,6 +61,11 @@
 
   window.addEventListener("mouseup", () => {
     isPressedDown = false;
+    if (maxMarqueeContent) {
+      maxMarqueeContent = false;
+      marqueeContent.style.left = "10px";
+      marqueeContent.style.webkitAnimation = "";
+    }
   });
 
   marquee.addEventListener("mousemove", (e) => {
@@ -85,6 +89,7 @@
       marqueeContent.style.left = `-${
         marqueeContent_rect.width - marquee_rect.width
       }px`;
+      maxMarqueeContent = true;
       marqueeContent.style.webkitAnimation = "none";
     }
   }

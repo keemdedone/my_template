@@ -13,7 +13,7 @@
     --slideTranslateXAfter: calc((-1 * var(--marqueeImgSize) * var(--allMarqueeImg)));
     --marqueeBoxWidth: 90vw;
     --marqueeBoxHeight: 50vh;
-    --marqueeImgDisplayed: 2.5;
+    --marqueeImgDisplayed: 3;
     --marqueeImgSize: calc(var(--marqueeBoxWidth) / var(--marqueeImgDisplayed));
 }
 
