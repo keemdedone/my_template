@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="slide-scroll.css" />
+    <title>Slide Scroll</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="img-box">
+        <img class="img" src="img/lol_photo/amumu.jpg" alt="#" />
+        <img class="img" src="img/lol_photo/kaisa.jpg" alt="#" />
+        <img class="img" src="img/lol_photo/katarina.jpg" alt="#" />
+        <img class="img" src="img/lol_photo/lillia.jpg" alt="#" />
+        <img class="img" src="img/lol_photo/nasus.jpg" alt="#" />
+        <img class="img" src="img/lol_photo/teemo.jpeg" alt="#" />
+        <img class="img" src="img/lol_photo/Viktor.jpg" alt="#" />
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  const root = document.documentElement;
+  const container = document.querySelector(".container");
+  const imageBox = document.querySelector(".img-box");
+  const imageWidth = getComputedStyle(root).getPropertyValue("--imgWidth");
+  const imageDisplayed =
+    imageBox.getBoundingClientRect().width / parseInt(imageWidth);
+  const imageLastDisplayed = Array.from(imageBox.children).slice(-3).reverse();
+  const maxWidth = imageBox.children.length * parseInt(imageWidth);
+  const scrollSize = 150;
+
+  let autoSlide;
+
+  for (let i = 0; i < imageDisplayed; i++) {
+    imageBox.insertBefore(imageLastDisplayed[i], imageBox.children[0]);
+  }
+
+  for (let i = 0; i < imageDisplayed; i++) {
+    imageBox.appendChild(imageBox.children[i].cloneNode(true));
+  }
+
+  /* Scroll by mousewheel */
+  imageBox.addEventListener("wheel", (ev) => {
+    clearInterval(autoSlide);
+    if (imageBox.scrollLeft >= maxWidth) {
+      imageBox.scrollLeft = 0;
+    } else if (imageBox.scrollLeft <= 0) {
+      imageBox.scrollLeft = maxWidth;
+    }
+
+    if (ev.deltaY < 0) {
+      imageBox.scrollLeft += scrollSize; /* scroll up */
+    } else {
+      imageBox.scrollLeft += -scrollSize; /* scroll down */
+    }
+  });
+
+  /* Auto slide */
+  function onSlide() {
+    autoSlide = setInterval(() => {
+      if (imageBox.scrollLeft >= maxWidth) {
+        imageBox.scrollLeft = 0;
+      } else if (imageBox.scrollLeft <= 0) {
+        imageBox.scrollLeft = maxWidth;
+      }
+      imageBox.scrollLeft += 1;
+    }, 15);
+  }
+
+  onSlide();
+
+  imageBox.addEventListener("mouseenter", () => {
+    clearInterval(autoSlide);
+  });
+
+  imageBox.addEventListener("mouseleave", () => {
+    onSlide();
+  });
+
+  /* Drag */
+  let dragEnable = false;
+
+  imageBox.addEventListener("mousedown", () => {
+    dragEnable = true;
+    clearInterval(autoSlide);
+  });
+
+  imageBox.addEventListener("mouseup", () => {
+    dragEnable = false;
+  });
+</script>
