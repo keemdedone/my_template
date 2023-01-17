@@ -1,9 +1,0 @@
-body {
-    --bg-dark: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
-    --bg-light: linear-gradient(45deg, #7f7fd5, #86a8e7, #91eae4);
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    min-height: 100vh;
-    background: var(--bg-dark);
-}

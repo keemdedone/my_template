@@ -159,12 +159,16 @@ function refreshPerspective(slideshow) {
 
 (async () => {
   // Using a for..of loop in case you want more slideshows on page.
-  for (const slideshow of [...document.querySelectorAll(".slideshow")]) {
+  const slides = document.querySelectorAll(".slideshow");
+  for (const slideshow of [...slides]) {
     // Wait for all images to load before initializing the slideshow
     for (const image of [...slideshow.children]) {
       await new Promise((resolve) => {
-        if (image.complete) resolve();
-        else image.onload = resolve;
+        if (image.complete) {
+          resolve();
+        } else {
+          image.onload = resolve;
+        }
       });
     }
 
