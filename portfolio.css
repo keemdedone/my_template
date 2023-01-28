@@ -14,6 +14,7 @@ body {
 .portfolio {
     background-color: #FFF;
     border-radius: 2px;
+    padding: 10px;
     width: calc(210mm / 1.2);
     height: calc(297mm / 1.2);
     box-shadow:
@@ -23,4 +24,70 @@ body {
         0px 0px 17.6px rgba(0, 0, 0, 0.083),
         0px 0px 33px rgba(0, 0, 0, 0.101),
         0px 0px 79px rgba(0, 0, 0, 0.14);
+}
+
+.left-side {
+    border: 1px solid red;
+    height: 100%;
+    width: 50%;
+}
+
+.left-side .image {
+    border: 1px solid red;
+    margin: 10px auto;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+
+.left-side .skill {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.left-side .communication {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.skill .box {
+    margin-top: 1rem;
+}
+
+.images {
+    margin: 8px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+    max-width: 260px;
+}
+
+.images .image-icon {
+    margin: 0 3px;
+}
+
+.image-icon.fix-1 {
+    padding-bottom: 5px;
+}
+
+.language {
+    margin-top: 1rem;
+    margin-left: 3rem;
+    display: flex;
+    gap: 8px;
+}
+
+.language .point {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.point>div {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid black;
 }
